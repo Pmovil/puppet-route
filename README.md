@@ -18,7 +18,7 @@ Add route for host and/or network.
         gateway     => '10.10.10.1',
     }
 
-Delete route for host and/or network..
+Delete route for host and/or network.
 
     $target_net_absent = ['10.10.20.51', '10.20.30.0/16']
     route { $target_net_absent:
