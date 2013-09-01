@@ -27,7 +27,7 @@ Add route for host.
         target_type => 'host'
     }
 
-Delete route for network.
+Delete route for host.
 
     $target_host_absent = ['10.10.20.51']
     route { $target_host_absent:
@@ -36,7 +36,7 @@ Delete route for network.
         target_type => 'host',
     }
 
-Delete route for host.
+Delete route for network.
 
     $target_net_absent = ['10.20.30.0/16']
     route { $target_net_absent:
