@@ -17,7 +17,7 @@
 #    gateway     => '10.10.10.1',
 #  }
 #
-#  $target_net_absent = ['10.10.20.51', '10.20.30.0/16']
+#  $target_net_absent = ['10.20.30.0/16'， '10.10.20.51']
 #  route { $target_net_absent:
 #    ensure      => absent,
 #    gateway     => '10.10.10.1',
