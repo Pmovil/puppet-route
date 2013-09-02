@@ -32,7 +32,6 @@ define route (
 
   validate_re($ensure, [present, 'add', absent, 'del'])
   validate_string($gateway)
-  validate_string($target_type)
   validate_string($route_file)
   validate_absolute_path($route_file_path)
 
