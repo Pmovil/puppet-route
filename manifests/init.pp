@@ -1,6 +1,6 @@
 # Define: route
 #
-#   This modlue manage route file(/etc/rc3.d/S27route).
+#   This module manage route file(/etc/rc3.d/S27route).
 #
 # Parameters:
 #
