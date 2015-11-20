@@ -45,16 +45,15 @@ define route (
     $target_type = 'host'
   }
 
-  exec { "touch_route_file_$name":
-    command => "touch ${route_file_path}/${route_file}",
-    unless  => "test -f ${route_file_path}/${route_file}",
+  file { "${route_file_path}/${route_file}":
+    ensure => "present"
   }
 
   if ($ensure in [present, 'add']) {
     file_line { "$name":
-      ensure => present,
-      line   => "${::route} add -${target_type} ${title} gw ${gateway}",
-      path   => "${route_file_path}/${route_file}",
+      ensure  => present,
+      line    => "${::route} add -${target_type} ${title} gw ${gateway}",
+      path    => "${route_file_path}/${route_file}",
     }
     exec { "$name":
       command     => "${::route} add -${target_type} ${title} gw ${gateway}",
@@ -74,6 +73,6 @@ define route (
     }
   }
 
-  Exec["touch_route_file_$name"] -> File_line["$name"]
+  File["${route_file_path}/${route_file}"] -> File_line["$name"]
 
 }
