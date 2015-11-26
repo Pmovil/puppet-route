@@ -47,7 +47,8 @@ define route (
 
   if !defined(File["${route_file_path}/${route_file}"]){
     file { "${route_file_path}/${route_file}":
-      ensure => "present"
+      ensure => "present",
+      mode => "a+x",
     }
   }
 
